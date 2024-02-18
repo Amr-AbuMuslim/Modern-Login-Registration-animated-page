@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+}
+.wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  min-width: 400px;
+  height: 500px;
+  background-color: rgb(92, 86, 86);
+  border-radius: 15px;
+  padding: 40px;
+  z-index: 11;
+  overflow: hidden;
+}
+.form-wrapper.sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.form-wrapper.sign-in {
+  /* display: none; */
+}
+.form-wrapper.sign-up {
+  position: absolute;
+  top: 0px;
+  transform: scale(0, 0);
+}
+.wrapper.activeSignup .form-wrapper.sign-in {
+  animation: hidejelly 1s ease forwards;
+}
+.wrapper.activeSignup .form-wrapper.sign-up {
+  animation: showjelly 1s ease forwards;
+  animation-delay: 1.5s;
+}
+.wrapper.activeSignup {
+  animation: wrappershowjelly 1s ease forwards;
+}
+.wrapper.activeSignIn .form-wrapper.sign-up {
+  animation: hidejelly 1s ease forwards;
+}
+.wrapper.activeSignIn .form-wrapper.sign-in {
+  animation: showjelly 1s ease forwards;
+  animation-delay: 1.5s;
+  transform: scale(0, 0);
+}
+
+@keyframes hidejelly {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.8, 1.1);
+  }
+  50% {
+    transform: scale(1.2, 0.9);
+  }
+  75% {
+    transform: scale(0.7, 1.2);
+  }
+  100% {
+    transform: scale(0, 0);
+  }
+}
+@keyframes wrappershowjelly {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.8, 1.1);
+  }
+  50% {
+    transform: scale(1.2, 0.9);
+  }
+  75% {
+    transform: scale(0.7, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes showjelly {
+  0% {
+    transform: scale(0, 0);
+  }
+  25% {
+    transform: scale(0.5, 1.2);
+  }
+  50% {
+    transform: scale(1.2, 0.9);
+  }
+  75% {
+    transform: scale(0.7, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+form .form-title {
+  font-size: 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-align: center;
+}
+.input-box {
+  position: relative;
+  margin: 30px 0px;
+  width: 320px;
+  border-bottom: 2px solid white;
+}
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  color: #fff;
+  pointer-events: none;
+  font-size: 18px;
+  transition: 0.4s ease-in-out;
+}
+.input-box input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  user-select: none;
+}
+.input-box input:focus ~ label,
+input-box input:valid ~ label {
+  top: -5px;
+}
+.forgot-pass {
+  margin: 15px 5px;
+}
+.forgot-pass a {
+  text-decoration: none;
+  color: #fff;
+}
+.forgot-pass a:hover {
+  text-decoration: underline;
+}
+button {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 14px;
+  transition: 0.5s ease-in-out;
+}
+.sign-link {
+  margin: 15px 0px;
+  text-align: center;
+}
+.sign-link p {
+  color: #fff;
+}
+.sign-link a {
+  text-decoration: none;
+  color: #fff;
+}
+.sign-link a:hover {
+  text-decoration: underline;
+}
+.social-platform {
+  text-align: center;
+  color: #fff;
+}
+.social-platform a {
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid;
+  width: 40px;
+  height: 40px;
+  margin: 15px;
+  border-radius: 50%;
+  line-height: 40px;
+  transition: 0.4s ease-in;
+}
+.social-platform a:hover {
+  color: #444;
+}
+.social-platform a:hover {
+  background-color: #fff;
+}
+.curve {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -15;
+  clip-path: circle(90% at 0 0);
+  transition: 0.5s ease-in;
+}
+.colors {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #444;
+}
+.colors .color {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: var(--col);
+}
+.colors .color.active {
+  border: 2px solid #fff;
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .colors {
+    width: 100%;
+    bottom: 0px;
+    top: revert;
+    flex-direction: row;
+  }
+ 
+}
