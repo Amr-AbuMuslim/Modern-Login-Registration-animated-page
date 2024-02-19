@@ -140,7 +140,7 @@ form .form-title {
   user-select: none;
 }
 .input-box input:focus ~ label,
-input-box input:valid ~ label {
+.input-box input:valid ~ label {
   top: -5px;
 }
 .forgot-pass {
